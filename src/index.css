@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+#firstRowHight{
+  max-height: 600px;min-height: 300px;
+}
+#addStudent{
+  max-width: 12rem;
+}
+#addSContainer{
+  margin-left: 15%;
+}
+#studentImage{
+  max-width: 22rem;
+}
+#studentImageSmall{
+  max-width: 12rem;
+}
+#footerApp{
+  margin-top: 20%;
+}
+#addSButton{
+  margin-left: 21%;
+  margin-top: 5%;
+}
