@@ -6,6 +6,7 @@ import StudentImage from './components/studentImage';
 import AddStudent from './components/addStudent';
 import FooterApp from './components/footerApp';
 class App extends Component {
+  
   state = {
     students: [{ name: "Mohammed", age: 38, city: "malmo", id: 1 },
     { name: "John", age: 29, city: "stockholm", id: 2 },
@@ -16,6 +17,24 @@ class App extends Component {
     ],
     studentsNumber:1
   };
+  addAStudent=(student)=>{
+    student.id=this.state.students.length+1
+    let copyStudents=[...this.state.students,student]//Spread Operator 
+    this.setState({
+        students:copyStudents
+    });
+   
+  }
+  deleteAStudent=(id)=>{
+   const updatedStudents=this.state.students.filter(student =>{
+    return student.id!==id
+   })
+   this.setState({
+     students:updatedStudents
+   })
+    
+   }
+  
   render() {
     return (
       <div className="App">
@@ -24,7 +43,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <div id="firstRowHight" className="col">
-            <ShowTableStudents students={this.state.students}/>
+            <ShowTableStudents deleteAStudent={this.deleteAStudent} students={this.state.students}/>
               
             </div>
             <div className="col">
@@ -38,18 +57,18 @@ class App extends Component {
             </div>
 
             <div className="col-6">
-              <AddStudent students={this.state.students}/>
+              <AddStudent addAStudent={this.addAStudent} />
            </div>
           </div>
 
           <div className="row" id="footerApp">
-           <FooterApp/>
+           
           </div>
 
 
 
         </div>
-
+        <FooterApp/>
       </div>
     );
 

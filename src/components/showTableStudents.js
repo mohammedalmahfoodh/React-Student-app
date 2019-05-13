@@ -9,6 +9,8 @@ const ShowTableStudents=(props)=>{
       <td>{student.name}</td>
       <td>{student.age}</td>
       <td>{student.city}</td>
+      <td ><a onClick={()=>props.deleteAStudent(student.id)} href="#" >Delete</a>  </td>
+      
     </tr>
       )
     })

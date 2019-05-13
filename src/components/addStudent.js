@@ -12,12 +12,10 @@ class AddStudent extends Component {
     }
     handleSubmit=(e)=>{
         e.preventDefault();
-      console.log(this.state)
+        this.props.addAStudent(this.state)
+     
     }
-    getStudentId() {
-        let newId = this.props.students.length;
-        return newId;
-    }
+    
     render() {
 
         return (

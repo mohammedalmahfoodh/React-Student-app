@@ -24,7 +24,8 @@ code {
   max-width: 22rem;
 }
 #studentImageSmall{
-  max-width: 12rem;
+  max-width: 10rem;
+  margin-left:45%;
 }
 #footerApp{
   margin-top: 20%;
