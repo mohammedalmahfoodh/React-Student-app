@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 class AddStudent extends Component {
     state = {
-        name: null,
+        name: '',
         age: 0,
-        city: null
+        city: ''
     }
     getStudentInfo = (e) => {
        this.setState({
@@ -13,6 +13,12 @@ class AddStudent extends Component {
     handleSubmit=(e)=>{
         e.preventDefault();
         this.props.addAStudent(this.state)
+        this.setState({
+            name:'',
+            age:0,
+            city:''
+        })
+
      
     }
     
@@ -26,19 +32,19 @@ class AddStudent extends Component {
                     <div className="form-group">
                         <label htmlFor="name">First Name</label>
                         <input type="text" className="form-control" onChange={this.getStudentInfo}
-                            id="name" aria-describedby="frstNameHelp" placeholder="Enter First Name" />
+                            id="name" aria-describedby="frstNameHelp" placeholder="Enter First Name" value={this.state.name} />
                         <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="city">City</label>
                         <input type="text" className="form-control" onChange={this.getStudentInfo}
-                            id="city" aria-describedby="citylHelp" placeholder="Enter city" />
+                            id="city" aria-describedby="citylHelp" placeholder="Enter city" value={this.state.city} />
 
                     </div>
                     <div className="form-group">
                         <label htmlFor="age">Age</label>
                         <input type="number" className="form-control" onChange={this.getStudentInfo}
-                            id="age" aria-describedby="ageHelp" placeholder="Enter age" />
+                            id="age" aria-describedby="ageHelp" placeholder="Enter age" value={this.state.age}/>
 
                     </div>
                     <button id="addSButton" 

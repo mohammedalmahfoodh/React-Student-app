@@ -2,10 +2,13 @@ import React from 'react';
 
 const ShowTableStudents=(props)=>{
     const students=props.students;
+    
     const studentsTemplate=students.map(student=>{
+      
+    
       return(
           <tr key={student.id}>
-      <th scope="row">{student.id}</th>
+      <th scope="row">{Math.ceil(student.id)}</th>
       <td>{student.name}</td>
       <td>{student.age}</td>
       <td>{student.city}</td>

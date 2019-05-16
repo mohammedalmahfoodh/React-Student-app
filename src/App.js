@@ -18,7 +18,7 @@ class App extends Component {
     studentsNumber:1
   };
   addAStudent=(student)=>{
-    student.id=this.state.students.length+1
+    student.id=Math.random()*1500+7
     let copyStudents=[...this.state.students,student]//Spread Operator 
     this.setState({
         students:copyStudents
